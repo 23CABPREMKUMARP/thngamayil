@@ -108,8 +108,20 @@ function App() {
     );
   }
 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="app-container">
+      {/* Mobile Nav Overlay */}
+      <div className={`mobile-nav ${mobileMenuOpen ? 'open' : ''}`}>
+        <button className="mobile-nav-close" onClick={() => setMobileMenuOpen(false)}>✕</button>
+        <a href="#home" onClick={() => setMobileMenuOpen(false)}>{T.nav.home}</a>
+        <a href="#about" onClick={() => setMobileMenuOpen(false)}>{T.nav.about}</a>
+        <a href="#services" onClick={() => setMobileMenuOpen(false)}>{T.nav.services}</a>
+        <a href="#projects" onClick={() => setMobileMenuOpen(false)}>{T.nav.projects}</a>
+        <a href="#contact" onClick={() => setMobileMenuOpen(false)}>{T.nav.quote}</a>
+      </div>
+
       {/* Navbar */}
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="logo">
@@ -148,6 +160,11 @@ function App() {
               <option value="ml">മലയാളം</option>
             </select>
           </div>
+          
+          {/* Hamburger button — mobile only */}
+          <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(true)} aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </nav>
 

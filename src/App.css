@@ -333,36 +333,233 @@
   background: var(--concrete-mid);
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .about-grid, .contact-grid {
-    grid-template-columns: 1fr;
+/* ===========================
+   RESPONSIVE — All Devices
+   =========================== */
+
+/* Mobile Hamburger Menu Toggle */
+.mobile-menu-btn {
+  display: none;
+  background: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-dark);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--leaf-green);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.mobile-nav.open {
+  display: flex;
+}
+
+.mobile-nav a {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.15);
+  width: 70%;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.mobile-nav a:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.mobile-nav-close {
+  position: absolute;
+  top: 20px;
+  right: 5%;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Large Desktop (1400px+) ── */
+@media (min-width: 1400px) {
+  .section { padding: 120px 8%; }
+  .navbar { padding: 22px 8%; }
+  .hero-content h1 { font-size: 5rem; }
+  .stat-number { font-size: 4rem; }
+}
+
+/* ── Standard Desktop (1200px–1400px) ── */
+@media (max-width: 1200px) {
+  .section { padding: 100px 6%; }
+  .navbar { padding: 18px 6%; }
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* ── Laptop (992px–1200px) ── */
+@media (max-width: 992px) {
+  .navbar { padding: 16px 5%; }
+  .nav-links { gap: 12px; }
+  .nav-links a { padding: 7px 13px; font-size: 0.9rem; }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-img-wrapper { order: -1; }
+
   .hero-content h1 {
     font-size: 3rem;
     white-space: normal;
   }
+
+  .hero-content h4 { font-size: 1.2rem !important; }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .stat-number { font-size: 2.8rem; }
+
+  .section-title { font-size: 2rem; }
 }
 
+/* ── Tablet (768px–992px) ── */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  .desktop-only {
-    display: none;
-  }
+  /* Hide desktop nav, show hamburger */
+  .nav-links { display: none; }
+  .mobile-menu-btn { display: flex; }
+
+  .desktop-only { display: none; }
+
+  .navbar { padding: 14px 5%; }
+
+  .hero { padding: 0 5%; }
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     white-space: normal;
   }
-  .hero-actions {
-    flex-direction: column;
+  .hero-content h4 { font-size: 1rem !important; letter-spacing: 1px !important; }
+  .hero-content p { font-size: 1rem; }
+  .hero-actions { flex-direction: column; align-items: center; gap: 12px; }
+  .hero-actions a { width: 200px; text-align: center; }
+
+  .section { padding: 70px 5%; }
+  .section-title { font-size: 1.8rem; }
+  .about-features { grid-template-columns: 1fr; gap: 15px; }
+
+  .services-grid {
+    grid-template-columns: 1fr;
   }
+  .service-card { padding: 30px; }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  .stats-section { padding: 60px 5%; }
+  .stat-number { font-size: 2.4rem; }
+
   .about-card {
     position: static;
     margin-top: 20px;
   }
+
+  .contact-grid { gap: 30px; }
+  .map-container { min-height: 280px; }
 }
+
+/* ── Mobile (480px–768px) ── */
+@media (max-width: 480px) {
+  .hero-content h1 { font-size: 1.8rem; }
+  .hero-content h4 { font-size: 0.85rem !important; }
+  .hero-actions a { width: 100%; }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .stat-number { font-size: 2.5rem; }
+
+  .section { padding: 55px 5%; }
+  .section-title { font-size: 1.5rem; }
+
+  .logo img { height: 30px !important; }
+
+  .lang-switcher { padding: 6px 10px; font-size: 0.85rem; }
+
+  .form-group input,
+  .form-group textarea { padding: 12px 15px; }
+
+  .project-card { height: 220px; }
+
+  .service-card { padding: 24px; }
+
+  .stack-phrase { font-size: 1.1rem; }
+  .concrete-block { width: 70px; height: 18px; }
+}
+
+/* ── Small Mobile (below 360px) ── */
+@media (max-width: 360px) {
+  .hero-content h1 { font-size: 1.5rem; }
+  .section-title { font-size: 1.3rem; }
+}
+
+/* ── Footer responsive ── */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+  .footer-grid div { align-items: center !important; }
+}
+
 /* Premium Stacking Concrete Blocks Loading Animation */
 .stack-loader-container {
   display: flex;
