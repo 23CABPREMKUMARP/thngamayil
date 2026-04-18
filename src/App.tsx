@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Building2, Construction, HardHat, Phone, Mail, MapPin, 
-  ArrowRight, ShieldCheck, Timer, Leaf, Globe
+  ArrowRight, ShieldCheck, Timer, Leaf, Globe, ArrowUp
 } from 'lucide-react';
 import './App.css';
-import heroImg from './assets/hero.jpeg';
+import heroImg from './assets/hero_landscape.png';
 import logoImg from './assets/logo.png'; // Add the logo import
 import project1Img from './assets/project1.jpeg';
 import { translations } from './translations';
@@ -410,6 +410,21 @@ function App() {
           </motion.div>
         </div>
       </section>
+
+      {/* Back to Top Button */}
+      {scrolled && (
+        <motion.button 
+          className="back-to-top"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          aria-label="Back to top"
+        >
+          <ArrowUp size={24} />
+        </motion.button>
+      )}
 
       {/* Footer */}
       <footer style={{ background: 'var(--leaf-green)', color: 'var(--white)', padding: '40px 5%', textAlign: 'center' }}>

@@ -767,3 +767,37 @@
   font-weight: 600;
   letter-spacing: 0.5px;
 }
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--leaf-green);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  background: var(--leaf-green-dark);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+}
