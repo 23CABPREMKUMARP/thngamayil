@@ -568,8 +568,8 @@
   .footer-grid div { align-items: center !important; }
 }
 
-/* RMC Truck Loader Animation */
-.rmc-loader-wrapper {
+/* Construction-Site Building Loader */
+.building-loader-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -577,181 +577,145 @@
   width: 100%;
 }
 
-.truck-container {
+.construction-site {
   position: relative;
-  width: 220px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   margin-bottom: 40px;
-  animation: truckBounce 0.5s ease-in-out infinite;
 }
 
-.truck-chassis {
+.ground-foundation {
   position: absolute;
-  bottom: 25px;
-  left: 20px;
-  width: 170px;
-  height: 12px;
-  background: #333;
-  border-radius: 4px;
-  z-index: 2;
-}
-
-.truck-cab {
-  position: absolute;
-  bottom: 30px;
-  right: 15px;
-  width: 45px;
-  height: 50px;
-  background: var(--leaf-green);
-  border-radius: 8px 15px 5px 5px;
-  z-index: 3;
-  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.1);
-}
-
-.cab-window {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  width: 25px;
-  height: 20px;
-  background: #A0D2EB;
-  border-radius: 4px 10px 4px 4px;
-  border: 2px solid #333;
-}
-
-.cab-light {
-  position: absolute;
-  top: 5px;
-  right: -2px;
-  width: 6px;
-  height: 6px;
-  background: #FFD700;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #FFD700;
-  animation: flicker 1.5s infinite;
-}
-
-.mixer-drum {
-  position: absolute;
-  bottom: 37px;
-  left: 30px;
-  width: 100px;
-  height: 60px;
-  background: #E2E8F0;
-  border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
-  border: 3px solid #333;
-  z-index: 1;
-  overflow: hidden;
-  transform-origin: center center;
-  animation: drumRotate 3s linear infinite;
-}
-
-.drum-pattern {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 100%;
-  background-image: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 10px,
-    rgba(0,0,0,0.05) 10px,
-    rgba(0,0,0,0.05) 20px
-  );
-}
-
-.drum-stripe {
-  position: absolute;
-  top: 50%;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 8px;
-  background: var(--leaf-green-dark);
-  transform: translateY(-50%);
-  opacity: 0.6;
+  height: 10px;
+  background: #4A5568;
+  border-radius: 5px;
 }
 
-.wheel {
+.building-structure {
   position: absolute;
   bottom: 10px;
-  width: 28px;
-  height: 28px;
-  background: #222;
-  border-radius: 50%;
-  border: 4px dashed #555;
-  z-index: 4;
-  animation: wheelSpin 1s linear infinite;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  display: flex;
+  flex-direction: column-reverse; /* Build from bottom up */
+  gap: 2px;
 }
 
-.wheel::after {
-  content: '';
+.building-level {
+  width: 80px;
+  height: 35px;
+  background: #E2E8F0;
+  border: 2px solid #CBD5E0;
+  border-radius: 4px;
+  position: relative;
+  opacity: 0.3;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.building-level.built {
+  opacity: 1;
+  transform: scaleY(1);
+  background: var(--leaf-green);
+  border-color: var(--leaf-green-dark);
+}
+
+.windows {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
-  background: #666;
-  border-radius: 50%;
+  width: 60px;
+  height: 15px;
+  display: flex;
+  justify-content: space-around;
 }
 
-.wheel-back-1 { left: 35px; }
-.wheel-back-2 { left: 75px; }
-.wheel-front { right: 25px; }
-
-.road-line {
-  position: absolute;
-  bottom: 0;
-  left: -20px;
-  width: 260px;
-  height: 4px;
-  background: #CBD5E0;
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.road-line::after {
+.windows::after, .windows::before {
   content: '';
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 2px;
+}
+
+.built .windows::after, .built .windows::before {
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* Crane Animation */
+.crane {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(90deg, #CBD5E0 70%, transparent 70%);
-  background-size: 30px 100%;
-  animation: roadFlow 0.5s linear infinite;
+  pointer-events: none;
 }
 
-@keyframes drumRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.crane-arm {
+  position: absolute;
+  top: 40px;
+  left: -20px;
+  width: 140px;
+  height: 6px;
+  background: #2D3748;
+  transform-origin: left center;
+  animation: cranePivot 6s ease-in-out infinite;
 }
 
-@keyframes wheelSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.crane-arm::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 10px;
+  height: 40px;
+  background: #2D3748;
 }
 
-@keyframes truckBounce {
+.crane-line {
+  position: absolute;
+  top: 46px;
+  left: 100px;
+  width: 2px;
+  height: 80px;
+  background: #718096;
+  animation: craneLine 6s ease-in-out infinite;
+}
+
+.crane-weight {
+  position: absolute;
+  top: 126px;
+  left: 91px;
+  width: 20px;
+  height: 15px;
+  background: #F6AD55;
+  border-radius: 2px;
+  animation: craneLine 6s ease-in-out infinite;
+}
+
+@keyframes cranePivot {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes craneLine {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
-}
-
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
-@keyframes roadFlow {
-  from { background-position: 0 0; }
-  to { background-position: -30px 0; }
+  50% { transform: translateY(-20px); }
 }
 
 .stack-loading-text {
   text-align: center;
   min-height: 60px;
 }
+
 
 .stack-phrase {
   font-family: var(--font-heading);

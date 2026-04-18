@@ -18,6 +18,7 @@ function App() {
   const [lang, setLang] = useState<Language>('en');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [phraseIndex, setPhraseIndex] = useState(0);
+  const [buildStep, setBuildStep] = useState(0);
 
   const T = translations[lang];
   
@@ -30,6 +31,11 @@ function App() {
   useEffect(() => {
 
 
+    // Build steps
+    const buildInterval = setInterval(() => {
+      setBuildStep(prev => prev < 4 ? prev + 1 : 1);
+    }, 1200);
+
     // Cycle phrases
     const phraseInterval = setInterval(() => {
       setPhraseIndex(prev => (prev + 1) % loadingPhrases.length);
@@ -38,9 +44,10 @@ function App() {
     // Final load
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5500);
+    }, 6000);
 
     return () => {
+      clearInterval(buildInterval);
       clearInterval(phraseInterval);
       clearTimeout(timer);
     };
@@ -70,30 +77,28 @@ function App() {
   if (loading) {
     return (
       <div className="loader-container">
-        <div className="rmc-loader-wrapper">
-          <div className="truck-container">
-            {/* Truck Cab */}
-            <div className="truck-cab">
-              <div className="cab-window"></div>
-              <div className="cab-light"></div>
+        <div className="building-loader-wrapper">
+          <div className="construction-site">
+            {/* Crane */}
+            <div className="crane">
+              <div className="crane-arm"></div>
+              <div className="crane-line"></div>
+              <div className="crane-weight"></div>
             </div>
             
-            {/* Truck Chassis */}
-            <div className="truck-chassis"></div>
-            
-            {/* Mixer Drum */}
-            <div className="mixer-drum">
-              <div className="drum-pattern"></div>
-              <div className="drum-stripe"></div>
+            {/* Building Levels */}
+            <div className="building-structure">
+              {[1, 2, 3, 4].map((level) => (
+                <div 
+                  key={level} 
+                  className={`building-level ${buildStep >= level ? 'built' : ''}`}
+                >
+                  <div className="windows"></div>
+                </div>
+              ))}
             </div>
             
-            {/* Wheels */}
-            <div className="wheel wheel-back-1"></div>
-            <div className="wheel wheel-back-2"></div>
-            <div className="wheel wheel-front"></div>
-            
-            {/* Road/Ground */}
-            <div className="road-line"></div>
+            <div className="ground-foundation"></div>
           </div>
           
           <div className="stack-loading-text">
