@@ -17,7 +17,6 @@ function App() {
   const [scrolled, setScrolled] = useState(false);
   const [lang, setLang] = useState<Language>('en');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [blockCount, setBlockCount] = useState(0);
   const [phraseIndex, setPhraseIndex] = useState(0);
 
   const T = translations[lang];
@@ -29,10 +28,7 @@ function App() {
   ];
 
   useEffect(() => {
-    // Increment blocks
-    const blockInterval = setInterval(() => {
-      setBlockCount(prev => prev < 6 ? prev + 1 : 0);
-    }, 600);
+
 
     // Cycle phrases
     const phraseInterval = setInterval(() => {
@@ -45,7 +41,6 @@ function App() {
     }, 5500);
 
     return () => {
-      clearInterval(blockInterval);
       clearInterval(phraseInterval);
       clearTimeout(timer);
     };
