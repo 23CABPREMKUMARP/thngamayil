@@ -107,7 +107,7 @@ function App() {
               {loadingPhrases[phraseIndex]}
             </motion.div>
             <div className="stack-sub">
-              Delivering Quality Concrete Since 2012
+              Delivering Quality Concrete
             </div>
           </div>
         </div>
