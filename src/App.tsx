@@ -75,18 +75,30 @@ function App() {
   if (loading) {
     return (
       <div className="loader-container">
-        <div className="stack-loader-container">
-          <div className="blocks-tower">
-            {[...Array(6)].map((_, i) => (
-              i < blockCount && (
-                <div 
-                  key={i} 
-                  className={`concrete-block ${i % 3 === 2 ? 'brand-accent' : ''}`}
-                >
-                  <div className="dust-puff"></div>
-                </div>
-              )
-            ))}
+        <div className="rmc-loader-wrapper">
+          <div className="truck-container">
+            {/* Truck Cab */}
+            <div className="truck-cab">
+              <div className="cab-window"></div>
+              <div className="cab-light"></div>
+            </div>
+            
+            {/* Truck Chassis */}
+            <div className="truck-chassis"></div>
+            
+            {/* Mixer Drum */}
+            <div className="mixer-drum">
+              <div className="drum-pattern"></div>
+              <div className="drum-stripe"></div>
+            </div>
+            
+            {/* Wheels */}
+            <div className="wheel wheel-back-1"></div>
+            <div className="wheel wheel-back-2"></div>
+            <div className="wheel wheel-front"></div>
+            
+            {/* Road/Ground */}
+            <div className="road-line"></div>
           </div>
           
           <div className="stack-loading-text">
@@ -95,12 +107,12 @@ function App() {
               key={phraseIndex}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.5 }}
             >
               {loadingPhrases[phraseIndex]}
             </motion.div>
             <div className="stack-sub">
-              We build step by step with precision...
+              Delivering Quality Concrete Since 2012
             </div>
           </div>
         </div>
