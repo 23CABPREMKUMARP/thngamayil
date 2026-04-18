@@ -5,7 +5,7 @@ import {
   ArrowRight, ShieldCheck, Timer, Leaf, Globe, ArrowUp
 } from 'lucide-react';
 import './App.css';
-import heroImg from './assets/hero_landscape.png';
+import heroImg from './assets/hero_landscape.jpeg';
 import logoImg from './assets/logo.png'; // Add the logo import
 import project1Img from './assets/project1.jpeg';
 import { translations } from './translations';
