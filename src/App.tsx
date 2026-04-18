@@ -16,11 +16,11 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [scrolled, setScrolled] = useState(false);
   const [lang, setLang] = useState<Language>('en');
-
-  const T = translations[lang];
-
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [blockCount, setBlockCount] = useState(0);
   const [phraseIndex, setPhraseIndex] = useState(0);
+
+  const T = translations[lang];
   
   const loadingPhrases = [
     "Building Strong Foundations...",
@@ -107,8 +107,6 @@ function App() {
       </div>
     );
   }
-
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="app-container">

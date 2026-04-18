@@ -229,16 +229,16 @@
 /* Projects Section */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
 .project-card {
   position: relative;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  height: 300px;
+  height: 220px;
 }
 
 .project-img {
@@ -476,7 +476,7 @@
 
   .navbar { padding: 14px 5%; }
 
-  .hero { padding: 0 5%; }
+  .hero { padding: 0 5%; min-height: 100vh; height: 100vh; }
   .hero-content h1 {
     font-size: 2.4rem;
     white-space: normal;
@@ -485,6 +485,9 @@
   .hero-content p { font-size: 1rem; }
   .hero-actions { flex-direction: column; align-items: center; gap: 12px; }
   .hero-actions a { width: 200px; text-align: center; }
+
+  /* Keep About Us logo at full desktop size */
+  .about-img { max-height: 400px !important; min-height: 300px; width: 100%; }
 
   .section { padding: 70px 5%; }
   .section-title { font-size: 1.8rem; }
@@ -496,8 +499,9 @@
   .service-card { padding: 30px; }
 
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
+  .project-card { height: 180px; }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -518,8 +522,12 @@
 /* ── Mobile (480px–768px) ── */
 @media (max-width: 480px) {
   .hero-content h1 { font-size: 1.8rem; }
+  .hero { min-height: 100vh; height: 100vh; }
   .hero-content h4 { font-size: 0.85rem !important; }
   .hero-actions a { width: 100%; }
+
+  /* Keep About Us logo at full size on mobile */
+  .about-img { max-height: 400px !important; min-height: 280px; }
 
   .stats-grid {
     grid-template-columns: 1fr;
@@ -537,7 +545,7 @@
   .form-group input,
   .form-group textarea { padding: 12px 15px; }
 
-  .project-card { height: 220px; }
+  .project-card { height: 200px; }
 
   .service-card { padding: 24px; }
 
