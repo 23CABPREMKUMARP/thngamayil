@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Building2, Construction, HardHat, Phone, Mail, MapPin, 
-  ArrowRight, ShieldCheck, Timer, Leaf, Globe, ArrowUp
+  ArrowRight, ShieldCheck, Timer, Leaf, Globe, ArrowUp,
+  Award, TrendingUp, Landmark, Truck
 } from 'lucide-react';
 import './App.css';
 import heroImg from './assets/hero_landscape.jpeg';
@@ -219,20 +220,13 @@ function App() {
       <section id="about" className="section">
         <motion.div 
           className="about-grid"
+          style={{ gridTemplateColumns: '1fr' }}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
         >
-          <motion.div className="about-img-wrapper" variants={fadeInUp}>
-            <img 
-              src={logoImg} 
-              alt="Thangamayil Logo" 
-              className="about-img"
-              style={{ objectFit: 'contain', maxHeight: '400px', background: 'var(--white)', padding: '40px' }}
-            />
-          </motion.div>
-          <motion.div className="about-text" variants={fadeInUp}>
+          <motion.div className="about-text" variants={fadeInUp} style={{ maxWidth: '800px', margin: '0 auto' }}>
             <h4 style={{ color: 'var(--leaf-green-dark)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '10px' }}>{T.about.badge}</h4>
             <h2 className="section-title" style={{ textAlign: 'left', fontSize: '2.5rem' }}>{T.about.title}</h2>
             <p style={{ color: 'var(--text-light)' }}>{T.about.description}</p>
@@ -263,8 +257,42 @@ function App() {
         </motion.div>
       </section>
 
+      {/* Milestones / Legacy Section */}
+      <section className="section" style={{ background: 'var(--concrete-light)' }}>
+        <h4 style={{ textAlign: 'center', color: 'var(--leaf-green-dark)', textTransform: 'uppercase', letterSpacing: '2px' }}>
+          {T.milestones.title}
+        </h4>
+        <h2 className="section-title">{T.milestones.subtitle}</h2>
+        
+        <div className="timeline-container">
+          {T.milestones.items.map((item, index) => (
+            <motion.div 
+              className="timeline-item" 
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <div className="timeline-year">{item.year}</div>
+                <div className="timeline-title">{item.title}</div>
+                <p className="timeline-desc">{item.desc}</p>
+                <div style={{ marginTop: '15px', color: 'var(--leaf-green-dark)' }}>
+                  {index === 0 && <Award size={20} />}
+                  {index === 1 && <Landmark size={20} />}
+                  {index === 2 && <TrendingUp size={20} />}
+                  {index === 3 && <Truck size={20} />}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       {/* Services Section */}
-      <section id="services" className="section" style={{ background: 'var(--concrete-light)' }}>
+      <section id="services" className="section">
         <h4 style={{ textAlign: 'center', color: 'var(--leaf-green-dark)', textTransform: 'uppercase', letterSpacing: '2px' }}>{T.services.badge}</h4>
         <h2 className="section-title">{T.services.title}</h2>
         <p className="section-subtitle">{T.services.subtitle}</p>
@@ -355,7 +383,13 @@ function App() {
             <p style={{ color: 'var(--text-light)', marginBottom: '40px' }}>{T.contact.description}</p>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '40px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+              <a 
+                href={T.contact.locationLink} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{ display: 'flex', alignItems: 'center', gap: '15px', color: 'inherit', textDecoration: 'none' }}
+                className="contact-item-hover"
+              >
                 <div style={{ background: 'var(--white)', padding: '15px', borderRadius: '50%', color: 'var(--leaf-green-dark)', boxShadow: '0 5px 15px rgba(0,0,0,0.05)' }}>
                   <MapPin />
                 </div>
@@ -363,25 +397,33 @@ function App() {
                   <h4 style={{ margin: 0 }}>{T.contact.location}</h4>
                   <p style={{ margin: 0, color: 'var(--text-light)' }}>{T.contact.locationValue}</p>
                 </div>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+              </a>
+              <a 
+                href={`tel:${T.contact.phoneValue.replace(/\s/g, '')}`} 
+                style={{ display: 'flex', alignItems: 'center', gap: '15px', color: 'inherit', textDecoration: 'none' }}
+                className="contact-item-hover"
+              >
                 <div style={{ background: 'var(--white)', padding: '15px', borderRadius: '50%', color: 'var(--leaf-green-dark)', boxShadow: '0 5px 15px rgba(0,0,0,0.05)' }}>
                   <Phone />
                 </div>
                 <div>
                   <h4 style={{ margin: 0 }}>{T.contact.phone}</h4>
-                  <p style={{ margin: 0, color: 'var(--text-light)' }}>+91 63846 38477</p>
+                  <p style={{ margin: 0, color: 'var(--text-light)' }}>{T.contact.phoneValue}</p>
                 </div>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+              </a>
+              <a 
+                href={`mailto:${T.contact.emailValue}`} 
+                style={{ display: 'flex', alignItems: 'center', gap: '15px', color: 'inherit', textDecoration: 'none' }}
+                className="contact-item-hover"
+              >
                 <div style={{ background: 'var(--white)', padding: '15px', borderRadius: '50%', color: 'var(--leaf-green-dark)', boxShadow: '0 5px 15px rgba(0,0,0,0.05)' }}>
                   <Mail />
                 </div>
                 <div>
                   <h4 style={{ margin: 0 }}>{T.contact.email}</h4>
-                  <p style={{ margin: 0, color: 'var(--text-light)' }}>info@thangamayilrmc.in</p>
+                  <p style={{ margin: 0, color: 'var(--text-light)' }}>{T.contact.emailValue}</p>
                 </div>
-              </div>
+              </a>
             </div>
           </motion.div>
           
@@ -393,9 +435,9 @@ function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form className="contact-form" action="https://formsubmit.co/info@thangamayilrmc.in" method="POST">
+            <form className="contact-form" action={`https://formsubmit.co/${T.contact.emailValue}`} method="POST">
               {/* Formsubmit Configuration */}
-              <input type="hidden" name="_subject" value="New Quote Request - Thangamayil RMC" />
+              <input type="hidden" name="_subject" value={`New Quote Request - ${T.about.title}`} />
               <input type="hidden" name="_template" value="table" />
               
               <div className="form-group">
@@ -439,7 +481,7 @@ function App() {
           </div>
           <h3 style={{ margin: 0, fontSize: '1.5rem' }}>{T.about.title}</h3>
         </div>
-        <p>&copy; 2026 {T.about.title}. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} {T.about.title}. All rights reserved.</p>
       </footer>
     </div>
   );

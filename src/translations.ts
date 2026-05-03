@@ -17,7 +17,7 @@ export const translations = {
     about: {
       badge: "About Us",
       title: "Thangamayil Ready Mix Concrete",
-      description: "We are a leading company located at Salem, known for our expertise and innovative approach in the industry. Founded with a vision to revolutionize the construction sector, we provide high-quality, cost-effective, and eco-friendly construction materials tailored to meet the unique needs of businesses.",
+      description: "We are a leading company located at Perambalur, known for our expertise and innovative approach in the industry. Founded with a vision to revolutionize the construction sector, we provide high-quality, cost-effective, and eco-friendly construction materials tailored to meet the unique needs of businesses.",
       trustTitle: "Starting Strong, Building Trust",
       trustDesc: "Driven to build strong and lasting structures",
       durability: "Durability",
@@ -46,6 +46,16 @@ export const translations = {
         { number: "100%", label: "Fresh Start, Strong Future", desc: "Building trust with every project" }
       ]
     },
+    milestones: {
+      title: "Our Legacy & Journey",
+      subtitle: "Decades of trust and excellence across diverse industries.",
+      items: [
+        { year: "1995", title: "Jewellery", desc: "Started our journey with Thangamayil Jewellery, building a foundation of trust." },
+        { year: "2007", title: "Real Estate", desc: "Expanded into premium residential and commercial real estate developments." },
+        { year: "2010", title: "Construction", desc: "Established our construction wing to deliver high-quality infrastructure." },
+        { year: "2023", title: "Earth Movers", desc: "Launched Earth Movers division to support heavy-duty construction needs." }
+      ]
+    },
     projects: {
       badge: "Our Work",
       title: "Featured Projects",
@@ -62,9 +72,12 @@ export const translations = {
       title: "Let's Build Something Great Together",
       description: "Have a project in mind? Our concrete experts are ready to provide you with the best materials and solutions.",
       location: "Location",
-      locationValue: "Salem, Tamil Nadu, India",
+      locationValue: "Perambalur District, Tamil Nadu, India",
+      locationLink: "https://share.google/NooN2mZsyenw02oRk",
       phone: "Phone",
+      phoneValue: "+91 63694 04356",
       email: "Email",
+      emailValue: "newthangamayilreadymixconcrete@gmail.com",
       form: {
         name: "Your Name",
         email: "Your Email",
@@ -93,7 +106,7 @@ export const translations = {
     about: {
       badge: "எங்களைப் பற்றி",
       title: "Thangamayil Ready Mix Concrete",
-      description: "நாங்கள் சேலத்தில் அமைந்துள்ள ஒரு முன்னணி நிறுவனம், தொழில்துறையில் எங்கள் நிபுணத்துவம் மற்றும் புதுமையான அணுகுமுறைக்கு பெயர் பெற்றவர்கள். கட்டுமானத் துறையில் புரட்சியை ஏற்படுத்தும் தொலைநோக்குப் பார்வையுடன் நிறுவப்பட்ட நாங்கள், வணிகங்களின் தனித்துவமான தேவைகளைப் பூர்த்தி செய்ய உயர்தர, செலவு குறைந்த மற்றும் சுற்றுச்சூழலுக்கு உகந்த கட்டுமானப் பொருட்களை வழங்குகிறோம்.",
+      description: "நாங்கள் பெரம்பலூரில் அமைந்துள்ள ஒரு முன்னணி நிறுவனம், தொழில்துறையில் எங்கள் நிபுணத்துவம் மற்றும் புதுமையான அணுகுமுறைக்கு பெயர் பெற்றவர்கள். கட்டுமானத் துறையில் புரட்சியை ஏற்படுத்தும் தொலைநோக்குப் பார்வையுடன் நிறுவப்பட்ட நாங்கள், வணிகங்களின் தனித்துவமான தேவைகளைப் பூர்த்தி செய்ய உயர்தர, செலவு குறைந்த மற்றும் சுற்றுச்சூழலுக்கு உகந்த கட்டுமானப் பொருட்களை வழங்குகிறோம்.",
       trustTitle: "வலுவான ஆரம்பம், நம்பிக்கையை வளர்ப்பது",
       trustDesc: "வலுவான மற்றும் நீடித்த கட்டமைப்புகளை உருவாக்க உந்தப்படுகிறது",
       durability: "ஆயுள்",
@@ -109,7 +122,7 @@ export const translations = {
       subtitle: "எந்தவொரு அளவிலான திட்டங்களுக்கும் துல்லியமாக வடிவமைக்கப்பட்ட கட்டுமானப் பொருட்களை வழங்குதல்.",
       items: [
         { title: "ரெடி மிக்ஸ் கான்கிரீட்", desc: "அதிநவீன தொழில்நுட்பத்தைப் பயன்படுத்தித் தயாரிக்கப்படும் ஆயுள் மற்றும் வலிமைக்கு முன்னுரிமை அளிக்கும் உயர் செயல்திறன் கொண்ட கான்கிரீட்." },
-        { title: "M-மணல் & P-மணல்", desc: "நிலையான கட்டிட நடைமுறைகளை உறுதி செய்யும் பிரீமியம் தரமான உற்பத்தி மணல் மற்றும் பூச்சு மணல்." },
+        { title: "M-மணல் & P-மணல்", desc: "நிலையான கட்டிட நடைமுறைகளை உறுதி செய்யும் பிரീமியம் தரமான உற்பத்தி மணல் மற்றும் பூச்சு மணல்." },
         { title: "ஜல்லிகள் & சிப்ஸ்", desc: "உகந்த வலிமைக்காக சிறந்த குவாரிகளில் இருந்து பெறப்பட்ட உயர்தர கட்டுமான சிப்ஸ் (12mm, 20mm)." }
       ],
       learnMore: "மேலும் அறிக"
@@ -120,6 +133,16 @@ export const translations = {
         { number: "100%", label: "அர்ப்பணிப்பு", desc: "ஒவ்வொரு கலவையிலும் தரத்திற்கு உறுதியளிக்கப்பட்டுள்ளது" },
         { number: "24/7", label: "தயார்நிலை", desc: "சரியான நேரத்தில் வழங்க எப்போதும் தயாராக உள்ளோம்" },
         { number: "100%", label: "புதிய தொடக்கம், வலுவான எதிர்காலம்", desc: "ஒவ்வொரு திட்டத்திலும் நம்பிக்கையை உருவாக்குகிறது" }
+      ]
+    },
+    milestones: {
+      title: "எங்கள் பாரம்பரியம் & பயணம்",
+      subtitle: "பல்வேறு துறைகளில் பல தசாப்த கால நம்பிக்கை மற்றும் சிறப்பு.",
+      items: [
+        { year: "1995", title: "தங்கமயில் நகைக்கடை", desc: "தங்கமயில் ஜூவல்லரி மூலம் எங்களது பயணத்தைத் தொடங்கினோம்." },
+        { year: "2007", title: "ரியல் எஸ்டேட்", desc: "குடியிருப்பு மற்றும் வணிக ரியல் எஸ்டேட் துறைகளில் விரிவுபடுத்தினோம்." },
+        { year: "2010", title: "கட்டுமானம்", desc: "உயர்தர உள்கட்டமைப்பை வழங்க கட்டுமானப் பிரிவை நிறுவினோம்." },
+        { year: "2023", title: "எர்த் மூவர்ஸ்", desc: "கனரக கட்டுமானத் தேவைகளை ஆதரிக்க எர்த் மூவர்ஸ் பிரிவைத் தொடங்கினோம்." }
       ]
     },
     projects: {
@@ -138,9 +161,12 @@ export const translations = {
       title: "ஒன்றாகச் சேர்ந்து சிறந்த ஒன்றை உருவாக்குவோம்",
       description: "திட்டம் ஏதேனும் உள்ளதா? சிறந்த பொருட்கள் மற்றும் தீர்வுகளை வழங்க எங்கள் கான்கிரீட் நிபுணர்கள் தயாராக உள்ளனர்.",
       location: "இடம்",
-      locationValue: "சேலம், தமிழ்நாடு, இந்தியா",
+      locationValue: "பெரம்பலூர் மாவட்டம், தமிழ்நாடு, இந்தியா",
+      locationLink: "https://share.google/NooN2mZsyenw02oRk",
       phone: "தொலைபேசி",
+      phoneValue: "+91 63694 04356",
       email: "மின்னஞ்சல்",
+      emailValue: "newthangamayilreadymixconcrete@gmail.com",
       form: {
         name: "உங்கள் பெயர்",
         email: "உங்கள் மின்னஞ்சல்",
@@ -169,7 +195,7 @@ export const translations = {
     about: {
       badge: "हमारे बारे में",
       title: "Thangamayil Ready Mix Concrete",
-      description: "हम सलेम में स्थित एक अग्रणी कंपनी हैं, जो उद्योग में अपनी विशेषज्ञता और अभिनव दृष्टिकोण के लिए जानी जाती है। निर्माण क्षेत्र में क्रांति लाने के दृष्टिकोण के साथ स्थापित, हम व्यवसायों की अनूठी जरूरतों को पूरा करने के लिए उच्च गुणवत्ता वाले, लागत प्रभावी और पर्यावरण के अनुकूल निर्माण सामग्री प्रदान करते हैं।",
+      description: "हम पेरम्बलुर में स्थित एक अग्रणी कंपनी हैं, जो उद्योग में अपनी विशेषज्ञता और अभिनव दृष्टिकोण के लिए जानी जाती है। निर्माण क्षेत्र में क्रांति लाने के दृष्टिकोण के साथ स्थापित, हम व्यवसायों की अनूठी जरूरतों को पूरा करने के लिए उच्च गुणवत्ता वाले, लागत प्रभावी और पर्यावरण के अनुकूल निर्माण सामग्री प्रदान करते हैं।",
       trustTitle: "मजबूत शुरुआत, विश्वास का निर्माण",
       trustDesc: "मजबूत और स्थायी संरचनाएं बनाने के लिए प्रेरित",
       durability: "पायदारी",
@@ -198,6 +224,16 @@ export const translations = {
         { number: "100%", label: "नई शुरुआत, मजबूत भविष्य", desc: "हर परियोजना के साथ विश्वास का निर्माण" }
       ]
     },
+    milestones: {
+      title: "हमारी विरासत और यात्रा",
+      subtitle: "विभिन्न उद्योगों में दशकों का विश्वास और उत्कृष्टता।",
+      items: [
+        { year: "1995", title: "आभूषण", desc: "हमने अपनी यात्रा थंगमयिल ज्वैलरी के साथ शुरू की, विश्वास की नींव रखी।" },
+        { year: "2007", title: "रियल एस्टेट", desc: "प्रीमियम आवासीय और वाणिज्यिक रियल एस्टेट विकास में विस्तार किया।" },
+        { year: "2010", title: "निर्माण", desc: "उच्च गुणवत्ता वाले बुनियादी ढांचे को वितरित करने के लिए अपना निर्माण विंग स्थापित किया।" },
+        { year: "2023", title: "अर्थ मूवर्स", desc: "भारी निर्माण आवश्यकताओं का समर्थन करने के लिए अर्थ मूवर्स डिवीजन लॉन्च किया।" }
+      ]
+    },
     projects: {
       badge: "हमारा काम",
       title: "विशेष प्रोजेक्ट्स",
@@ -214,9 +250,12 @@ export const translations = {
       title: "आइए मिलकर कुछ महान बनाएं",
       description: "क्या आपके मन में कोई प्रोजेक्ट है? हमारे कंक्रीट विशेषज्ञ आपको सर्वोत्तम सामग्री और समाधान प्रदान करने के लिए तैयार हैं।",
       location: "स्थान",
-      locationValue: "सलेम, तमिलनाडु, भारत",
+      locationValue: "पेरम्बलुर जिला, तमिलनाडु, भारत",
+      locationLink: "https://share.google/NooN2mZsyenw02oRk",
       phone: "फोन",
+      phoneValue: "+91 63694 04356",
       email: "ईमेल",
+      emailValue: "newthangamayilreadymixconcrete@gmail.com",
       form: {
         name: "आपका नाम",
         email: "आपका ईमेल",
@@ -245,7 +284,7 @@ export const translations = {
     about: {
       badge: "ഞങ്ങളെ കുറിച്ച്",
       title: "Thangamayil Ready Mix Concrete",
-      description: "വ്യവസായത്തിലെ ഞങ്ങളുടെ വൈദഗ്ധ്യത്തിനും പുതുമയുള്ള സമീപനത്തിനും പേരുകേട്ട സേലത്തെ ഒരു പ്രമുഖ കമ്പനിയാണ് ഞങ്ങൾ. നിർമ്മാണ മേഖലയിൽ വിപ്ലവം സൃഷ്ടിക്കുക എന്ന ലക്ഷ്യത്തോടെ സ്ഥാപിതമായ ഞങ്ങൾ, ബിസിനസ്സുകളുടെ തനതായ ആവശ്യങ്ങൾ നിറവേറ്റുന്നതിനായി ഉയർന്ന നിലവാരമുള്ളതും ചെലവ് കുറഞ്ഞതും പരിസ്ഥിതി സൗഹൃദവുമായ നിർമ്മാണ സാമഗ്രികൾ നൽകുന്നു.",
+      description: "വ്യവസായത്തിലെ ഞങ്ങളുടെ വൈദഗ്ധ്യത്തിനും പുതുമയുള്ള സമീപനത്തിനും പേരുകേട്ട പെരമ്പലൂരിലെ ഒരു പ്രമുഖ കമ്പനിയാണ് ഞങ്ങൾ. നിർമ്മാണ മേഖലയിൽ വിപ്ലവം സൃഷ്ടിക്കുക എന്ന ലക്ഷ്യത്തോടെ സ്ഥാപിതമായ ഞങ്ങൾ, ബിസിനസ്സുകളുടെ തനതായ ആവശ്യങ്ങൾ നിറവേറ്റുന്നതിനായി ഉയർന്ന നിലവാരമുള്ളതും ചെലവ് കുറഞ്ഞതും പരിസ്ഥിതി സൗഹൃദവുമായ നിർമ്മാണ സാമഗ്രികൾ നൽകുന്നു.",
       trustTitle: "ശക്തമായ തുടക്കം, വിശ്വാസം വളർത്തൽ",
       trustDesc: "ശക്തവും ശാശ്വതവുമായ ഘടനകൾ നിർമ്മിക്കാൻ പ്രേരിപ്പിക്കുന്നു",
       durability: "ഈട്",
@@ -274,6 +313,16 @@ export const translations = {
         { number: "100%", label: "പുതിയ തുടക്കം, ശക്തമായ ഭാവി", desc: "ഓരോ സംരംഭത്തിലും വിശ്വാസം വളർത്തുന്നു" }
       ]
     },
+    milestones: {
+      title: "ഞങ്ങളുടെ പാരമ്പര്യം & യാത്ര",
+      subtitle: "വിവിധ വ്യവസായങ്ങളിലായി പതിറ്റാണ്ടുകളുടെ വിശ്വാസവും മികവും.",
+      items: [
+        { year: "1995", title: "ആഭരണങ്ങൾ", desc: "വിശ്വാസത്തിന്റെ അടിത്തറ പാകി തങ്കമയിൽ ജ്വല്ലറിയിലൂടെ ഞങ്ങളുടെ യാത്ര ആരംഭിച്ചു." },
+        { year: "2007", title: "റിയൽ എस्टेट", desc: "പ്രീമിയം റെസിഡൻഷ്യൽ, കൊമേഴ്‌സ്യൽ റിയൽ എസ്റ്റേറ്റ് മേഖലകളിലേക്ക് വ്യാപിച്ചു." },
+        { year: "2010", title: "നിർമ്മാണം", desc: "ഉയർന്ന നിലവാരമുള്ള ഇൻഫ്രാസ്ട്രക്ചർ നൽകുന്നതിനായി നിർമ്മാണ വിഭാഗം സ്ഥാപിച്ചു." },
+        { year: "2023", title: "എർത്ത് മൂവേഴ്സ്", desc: "കനത്ത നിർമ്മാണ ആവശ്യങ്ങളെ പിന്തുണയ്ക്കുന്നതിനായി എർത്ത് മൂവേഴ്‌സ് വിഭാഗം ആരംഭിച്ചു." }
+      ]
+    },
     projects: {
       badge: "ഞങ്ങളുടെ പ്രവൃത്തികൾ",
       title: "ഫീച്ചർ ചെയ്ത പ്രോജക്റ്റുകൾ",
@@ -290,9 +339,12 @@ export const translations = {
       title: "നമുക്ക് ഒന്നിച്ച് മികച്ച ഒന്ന് നിർമ്മിക്കാം",
       description: "നിങ്ങളുടെ മനസ്സിൽ ഒരു പ്രോജക്റ്റ് ഉണ്ടോ? മികച്ച സാമഗ്രികളും പരിഹാരങ്ങളും നൽകാൻ ഞങ്ങളുടെ കോൺക്രീറ്റ് വിദഗ്ധർ തയ്യാറാണ്.",
       location: "സ്ഥലം",
-      locationValue: "സേലം, തമിഴ്നാട്, ഇന്ത്യ",
+      locationValue: "പെരമ്പലൂർ ജില്ല, തമിഴ്നാട്, ഇന്ത്യ",
+      locationLink: "https://share.google/NooN2mZsyenw02oRk",
       phone: "ഫോൺ",
+      phoneValue: "+91 63694 04356",
       email: "ഇമെയിൽ",
+      emailValue: "newthangamayilreadymixconcrete@gmail.com",
       form: {
         name: "നിങ്ങളുടെ പേര്",
         email: "നിങ്ങളുടെ ഇമെയിൽ",
